@@ -1,2 +1,2 @@
-# appsmultimedia
+# Proyecto
 Proyecto aplicaciones multimedia
