@@ -1,3 +1,3 @@
 # Proyecto
-Proyecto aplicaciones multimedia. /t
+Proyecto aplicaciones multimedia. /n
 Prueba
