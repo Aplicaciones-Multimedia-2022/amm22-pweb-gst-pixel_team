@@ -20,7 +20,7 @@ nav{
 .tab.current{
     border-radius: 1px;
     margin: 4%;
-    border: red solid 1px;
+    border: blue solid 1px;
     position:relative;
     list-style-type: none;
     text-align:center;
