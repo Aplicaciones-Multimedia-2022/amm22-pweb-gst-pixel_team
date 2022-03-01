@@ -1,1 +1,40 @@
+#title{
+    text-align: center;
+}
+
+nav{
+    border: red solid 1px;
+    text-align: center;
+}
+
+.tab{
+    margin: 4%;
+    border: red solid 1px;
+    position:relative;
+    list-style-type: none;
+    text-align:center;
+    display: inline;
+}
+
+.tab.current{
+    border-radius: 1px;
+    margin: 4%;
+    border: red solid 1px;
+    position:relative;
+    list-style-type: none;
+    text-align:center;
+    background-color: grey;
+    display: inline;
+}
+
+.content{
+    display: none;
+}
+
+.content.current{
+    padding: 0%;
+    border: red solid 1px;
+    display: block;
+    background-color: grey;
+}
 
