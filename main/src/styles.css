@@ -14,6 +14,7 @@ nav{
     list-style-type: none;
     text-align:center;
     display: inline;
+    background-color: lightgrey;
 }
 
 .tab.current{
