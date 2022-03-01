@@ -1,3 +1,13 @@
+:root{
+    --black-dark: rgb(35, 39, 42);
+    --blakc-light: rgb(44, 47, 51);
+    --blue-dark: rgb(64 78 237);
+    --blue-light: rgb(88 101 242);
+    --grey-dark: rgb(153, 170, 181);
+    --grey-light: rgb(246, 246, 246);
+    --white: rgb(255,255,255);
+}
+
 #title{
     text-align: center;
 }
