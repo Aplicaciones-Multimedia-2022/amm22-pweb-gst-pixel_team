@@ -1,3 +1,8 @@
+@font-face{
+    font-family: ethnocentric;
+    src: url(/main/resources/ethnocentric\ rg\ it.otf);
+}
+
 :root{
     --black-dark: rgb(35, 39, 42);
     --blakc-light: rgb(44, 47, 51);
@@ -27,6 +32,7 @@ nav{
     text-align:center;
     display: inline;
     background-color: lightgrey;
+    font-family: ethnocentric;
 }
 
 .tab.current{
