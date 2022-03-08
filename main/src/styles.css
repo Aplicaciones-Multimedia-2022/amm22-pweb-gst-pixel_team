@@ -4,13 +4,16 @@
 }
 
 :root{
-    --black-dark: rgb(35, 39, 42);
-    --blakc-light: rgb(44, 47, 51);
-    --blue-dark: rgb(64 78 237);
-    --blue-light: rgb(88 101 242);
-    --grey-dark: rgb(153, 170, 181);
-    --grey-light: rgb(246, 246, 246);
+    /*Paleta de prueba 1*/
+    --c1: rgb(35, 39, 42);
+    --c2: rgb(44, 47, 51);
+    --c3: rgb(64 78 237);
+    --c4: rgb(88 101 242);
+    --c5: rgb(153, 170, 181);
+    --c6: rgb(246, 246, 246);
     --white: rgb(255,255,255);
+
+    /*Paleta de prueba 2*/
 }
 
 *{
@@ -22,13 +25,13 @@
 }
 
 body{
-    background-color: var(--blue-dark);
+    background-color: var(--c3);
 }
 
 .container{
     margin:0%;
     padding: 0%;
-    background-color: var(--blue-dark);
+    background-color: var(--c3);
 }
 
 #title{
@@ -36,7 +39,7 @@ body{
     padding: 2%;
     margin: 2%;
     width: 19%;
-    background-color: var(--black-dark);
+    background-color: var(--c1);
     font-size: 130%;
     font-family:ethnocentric;
     color: white;
@@ -47,7 +50,7 @@ nav{
     padding: .5%;
     text-align: center;
     border: black solid 3px;
-    background-color: var(--blakc-light);
+    background-color: var(--c2);
 }
 
 .tab{
@@ -56,7 +59,7 @@ nav{
     list-style-type: none;
     text-align:center;
     display: inline;
-    background-color: var(--grey-dark);
+    background-color: var(--c5);
     font-family: ethnocentric;
 }
 
@@ -66,7 +69,7 @@ nav{
     position:relative;
     list-style-type: none;
     text-align:center;
-    background-color: var(--grey-dark);
+    background-color: var(--c5);
     display: inline;
     color: var(--white);
 }
