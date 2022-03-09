@@ -1,5 +1,4 @@
-console.log("Running");
-
+//Page Logic
 const tabs = document.querySelectorAll('.tab');
 const sections = document.querySelectorAll('.content');
 
