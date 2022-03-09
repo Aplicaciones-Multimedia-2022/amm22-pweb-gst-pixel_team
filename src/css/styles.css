@@ -24,6 +24,14 @@
     border: 0;
 }
 
+#canvas {  
+    align-self: center;
+    background: #b1c2cf;
+    border-top: #5e46e9 10px solid;
+    border-right: #5e46e9 10px solid;
+    border-bottom: #5e46e9 10px solid;
+}
+
 body{
     background-color: var(--c3);
 }
