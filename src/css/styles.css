@@ -39,7 +39,7 @@ body{
 .container{
     margin:0%;
     padding: 0%;
-    background-color: var(--c3);
+    background-color: blue;
 }
 
 #title{
