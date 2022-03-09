@@ -56,7 +56,7 @@ function Obstacle(posX, posY, height, width, source) {
     }
 
     this.collision = function(x,y){
-        if(x == this.posX)
+        if(x == this.pos);
         
     }
 
