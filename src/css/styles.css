@@ -80,6 +80,9 @@ footer{
   height: 80px;
   color: var(--c1);
   font-family: Upheaval;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer nav a{
