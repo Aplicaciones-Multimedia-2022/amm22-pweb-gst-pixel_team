@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Jump</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <link rel="icon" href="../../resources/imgs/logos/title.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/game.css">
+</head>
+
+<body>
+<header>
+  <img class="tab" id="logo" src="../../resources/imgs/logos/logo2.png">
+  <nav>
+    <ul>
+        <span class="tab">Juego</span>
+        <span class="tab">Descripcion del juego</span>
+        <span class="tab">Autores</span>
+        <span class="tab">Multimedia</span>
+        <span class="tab">Desarrollo</span>
+        <span class="tab">Referencias</span>
+        <span class="tab">Contacta</span>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Inicio -->
+  <section class="content current">
+    <h1>
+      <span class="title">Pixel</span>
+      <span class="title">Jump</span>
+    </h1>
+    <div class="apartado">
+      <input id="initplay" type="button" value="Jugar" onclick="initplay()"/>
+    </div>
+  </section>
+
+  <!-- Juego -->
+  <section class="content">
+
+    <div id="game">
+        <div class="menu" id="menu-principal">
+            <img class="image-button" id="play" type="button" onclick="menu(1,0,0)" src="../../resources/imgs/buttons/play.png" 
+            onmouseout="this.src='../../resources/imgs/buttons/play.png'; "onmouseover="this.src='../../resources/imgs/buttons/play_hover.png';"> 
+            <input type="button" value="Personaje" onclick="menu(2,0,0)"/>
+            <img class="image-button" id="audio" type="button" onclick="menu(7,0,0)" src="../../resources/imgs/buttons/speaker_on.png" 
+            onmouseout="this.src='../../resources/imgs/buttons/speaker_on.png';"onmouseover="this.src='../../resources/imgs/buttons/speaker_on_hover.png';">
+        </div>
+        <div class="menu" id="menu-level">
+            <h1>Selecciona un nivel</h1>
+            <input type="button" value="Atras" onclick="menu(0,0,0)" />
+            <input class="levels" type="button" value="Tutorial" onclick="menu(3,1,0)" />
+            <input class="levels" type="button" value="Nivel 2" onclick="menu(3,2,0)" />
+            <input class="levels" type="button" value="Nivel 3" onclick="menu(3,3,0)" />
+        </div>
+        <div class="menu" id="menu-skin">
+            <input type="button" value="Atras" onclick="menu(0,0,0)" />
+            <img class="image-button" type="button" onclick="menu(0,0,1)" src="../../resources/imgs/skins/player1_block.png" 
+            onmouseout="this.src='../../resources/imgs/skins/player1_block.png';"onmouseover="this.src='../../resources/imgs/skins/player1_block_hover.png';">
+            <img class="image-button" type="button" onclick="menu(0,0,2)" src="../../resources/imgs/skins/player2_block.png" 
+            onmouseout="this.src='../../resources/imgs/skins/player2_block.png';"onmouseover="this.src='../../resources/imgs/skins/player2_block_hover.png';">
+            <img class="image-button" type="button" onclick="menu(0,0,3)" src="../../resources/imgs/skins/player3_block.png" 
+            onmouseout="this.src='../../resources/imgs/skins/player3_block.png';"onmouseover="this.src='../../resources/imgs/skins/player3_block_hover.png';">
+        </div>
+        <div class="menu" id="pause">
+            <img type="button" onclick="menu(5,0,0)" src="../../resources/imgs/buttons/pause.png">
+        </div>
+        <div class="menu" id="menu-gameover">
+            <h1>GAMEOVER</h1>
+            <input class="restart" type="button" value="Reiniciar" onclick="menu(3,0,0)" />
+            <input type="button" value="Menu Principal" onclick="menu(0,0,0)" />
+        </div>
+        <div class="menu" id="menu-pause">
+            <!-- Realmente reanudar no es restart pero me viene bien porque tiene misma función -->
+            <input class="restart" type="button" value="Reanudar" onclick="menu(6,0,0)"/>
+            <input class="restart" type="button" value="Reiniciar" onclick="menu(3,0,0)" />
+            <input id="main_menu" type="button" value="Menu Principal" onclick="menu(0,0,0)" />
+        </div>
+        <div class="menu" id="menu-win">
+            <h1>HAS GANADO</h1>
+            <input class="restart" type="button" value="Reiniciar" onclick="menu(3,0,0)" />
+            <input type="button" value="Menu Principal" onclick="menu(0,0,0)" />
+        </div>
+    </div>
+</section>
+
+  <!-- Paágina de descripción -->
+  <section class="content">
+
+    <div class="apartado">
+
+      <h2 class="titulo_texto">Descripción</h2><br>
+
+      <p>Pixel Jump consiste en avanzar por un mapa evitando obstáculos. Perderás la partida si tu personaje toca frontalmente
+        cualquier obstáculo o se cae encima de un pincho. El personaje cambia de modo al atravesar portales como estos:</p><br>
+
+      <div class="images">
+        <img src="../../resources/imgs/entities/portal1.png">
+        <img src="../../resources/imgs/entities/portal2.png" >
+      </div><br>
+
+      <p>Los modos de juego son <i>block</i>, <i>spaceship</i> y <i>spider</i>, en el primer modo de juego el personaje 
+        únicamente puede saltar y cualquier colisión que no sea con un suelo supondrá el final de la partida. En el modo nave 
+        espacial el jugador se mueve en el aire con el objetivo de evitar obstáculos suspendidos. Por último en el modo
+        araña el personaje puede alternar su posición entre el suelo y el techo del mapa para saltar objetos más largos.</p><br>
+      
+      <p>Otra mecánica presente en el juego es la de <i>Spring</i> o muelle. Cuando el jugador (en modo bloque) interactúa con este
+        objeto, adquiere un salto adicional de forma que podrá elevarse en el aire. Para interactuar con este objeto el jugador ha 
+        de saltar en el momento justo, sino lo atravesará sin realizar la mecánica.</p><br>
+
+      <div class="images">
+        <img src="../../resources/imgs/entities/singlespring.png">
+      </div><br>
+        
+      <p>El juego consta de tres niveles que aumentan la dificultad progresivamente, siendo el primero de ellos un tutorial. Para aprender
+        a jugar el tutorial se pausa con una pequeña explicación para permitir al jugador aprender las mecánicas de forma sencilla. </p>
+
+    </div>
+  </section>
+
+  <!-- Página de autores -->
+  <section class="content">
+
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="../../resources/imgs/authors/hugo.jpg" alt="HUGO" style="width:100%">
+          <div>
+            <h2>HUGO HERRERO GOMEZ-POMPA</h2>
+            <p>Responsable del JavaScript Juego</p>
+            <p>Estudiante grado en Ingeniería de Sonido e Imagen, UC3M</p>
+            <p>100429263@alumnos.uc3m.es</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="../../resources/imgs/authors/cris.jpg" alt="CRISTINA" style="width:100%">
+          <div>
+            <h2>CRISTINA DE LA MORENA VICENTE</h2>
+            <p>Responsable del JavaScript de la página, del CSS y del HTML</p>
+            <p>Estudiante grado en Ingeniería de Sonido e Imagen, UC3M</p>
+            <p>100383522@alumnos.uc3m.es</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="../../resources/imgs/authors/carolina.jpg" alt="CAROLINA" style="width:100%">
+          <div>
+            <h2>CAROLINA CARPIO ORTEGA</h2>
+            <p>Responsable del JavaScript de la página, del CSS y del HTML</p>
+            <p>Estudiante grado en Ingeniería de Sonido e Imagen, UC3M</p>
+            <p>100363749@alumnos.uc3m.es</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <img src="../../resources/imgs/authors/jorge.jpg" alt="JORGE" style="width:100%">
+          <div>
+            <h2>JORGE ORTIGOSO NARRO</h2>
+            <p>Responsable del JavaScript Juego</p>
+            <p>Estudiante grado en Ingeniería de Sonido e Imagen, UC3M</p>
+            <p>100429257@alumnos.uc3m.es</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Página Multimedia -->
+  <section class="content">
+    <div class="apartado">
+      <p>Multimedia</p>
+    </div>
+  </section>
+
+  <!-- Página de Desarrollo -->
+  <section class="content">
+
+    <div class="apartado">
+      <h2>Responsabilidades</h2>
+        <p>CSS y HTML: Carloina y Cristina.</p><br>
+        <p>JavaScript: Jorge y Hugo</p>
+    </div>
+
+    <div class="apartado">
+    <h2>Técnicas y tecnologias utilizadas</h2>
+      <p>Para el desarrollo del código HTML hemos desarrollado un esquema de la página
+      basado en secciones. La sección principal es la sección de Inicio enlaza directamente con el Juego, mientras que
+      el resto de secciones estan dedicadas a los autores, desarrollo, descripción, refernecias y multimedia. Para ir 
+      a la página de inicio se puede pulsar el logo del juego. Para poder hacer visible e invisible estas secciones accedemos a ellas 
+      a traves del DOM de la página y cambiamos sus etiquetas para aplicarles el estilo CSS que queremos en cada momento.
+      </p><br>
+
+      <p> En el desarrollo del código CSS hemos trabajado a partir de una paleta de colores, selectores y pseudoclases para dotar de estilo a la página.
+      Para añadir dinamismo hemos trabajado con secuencias animadas y keyframes para el título de la página. </p>
+    </div>
+
+    <div class="apartado">
+    <h2>Problemas y dificultades</h2>
+        <p>Debido a la naturaleza de nuestro juego, necesitábamos poder implementar todas las entidades de forma modular
+        para poder crear un nivel de forma sencilla y compatible con diferentes modos de juego. Para ello usamos una implementación
+        basada en objetos entidad, clase de la cual heredan todos los objetos del juego, esto nos facilita mantener una lógica global
+        y evitar reciclar código. La orientación de objetos en javascript no hacía que esto fuera muy cómodo de implementar debido a
+        su modelo de prototipos, por eso decidimos programar con ECMAScript6 que permite crear clases y objetos de la misma manera que
+        en Java.</p><br>
+      
+        <p>En cuanto a la lógica del juego el principal problema que nos encontramos fue la lógica de colisiones. Al no estar definidos los
+        niveles en el momento del desarrollo necesitamos que las colisiones sean detectadas para cualquier bloque genérico, de esta forma
+        se puede diseñar el nivel con total libertad. Esto suponía un problema ya que al haber diferente tipo de objetos habría que hacer
+        poliformismo en los métodos de colisión, al final ajustamos la hitbox de cada bloque en función de su tipo manteniéndola cuadrada
+        para evitar hacer código excesivamente complejo. Toda la lógica del juego corre dentro de un objeto enviroment que incluye la
+        inicialización del canvas y su configuración, lo que se inserta en la página de forma dinámica para poder pausar el entorno en
+        cualquier momento, hacemos uso de varias formas de esta posiblidad como en el menú o en el tutorial.</p><br>
+      
+        <p>Otro problema que apareció fue la reproducción de elementos multimedia. Para poder reproducir música de fondo en los niveles
+        era necesario activarla mediante un evento de usuario, así que aprovechamos esta necesidad para crear un menú html/css que
+        lanzara estos eventos al pulsar los botones de juego en cada nivel. La música se pausa y reinicia con otros eventos de menú. Para
+        controlar globalmente la reproducción usamos una variable global que se comprueba siempre que se intenta reproducir audio.</p>
+    </div>
+
+    <div class="apartado">
+      <h2>Puntos fuertes</h2>
+        <p>El principal punto fuerte es la flexibilidad del juego a la hora de crear niveles, ya que todo está estandarizado.</p>
+    </div>
+
+    <div class="apartado">
+      <h2>Planificación</h2>
+        <p>Para afrontar este trabajo hemos decidido repartirnos las tareas y trabajar por separado para más tarde juntar
+        todo el código en las semanas finales.
+        Durante las primeras semanas Hugo y Jorge se han centrado en el desarrollo del juego mientras que Cristina y Carolina se han centrado en
+        la página web y el estilo. Para la semana del 11 de Abril, tenemos terminado cada parte y hemos juntado todo el código para comprobar que
+        todo funciona como deseamos.</p>
+    </div>
+
+    <br>
+    <div class="apartado">
+      <h2>Esfuerzo estimado a priori, y el trabajo real</h2>
+    </div>
+    <br>
+    <table class="planificacion">
+      <tr>
+        <th>Trabajo</th>
+        <th>Estimado</th>
+        <th>Real</th>
+      </tr>
+      <tr>
+        <td>HTML</td>
+        <td>5h</td>
+        <td>7h</td>
+      </tr>
+      <tr>
+        <td>CSS</td>
+        <td>7h</td>
+        <td>10h</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>10h</td>
+        <td>38h</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Referencias -->
+  <section class="content">
+
+    <div class="apartado">
+
+      <h2>Referencias</h2><br>
+      <p>https://www.w3schools.com/graphics/tryit.asp?filename=trygame_image
+        <br>https://www.w3schools.com/graphics/canvas_clock_hands.asp
+        <br>https://www.w3schools.com/graphics/game_intro.asp
+        <br>https://www.w3schools.com/graphics/tryit.asp?filename=trygame_default_gravity
+        <br>https://www.w3schools.com/jquery/default.asp
+        <br>https://www.w3schools.com/jquery/jquery_get_started.asp
+        <br>https://jquery.com/download/
+        <br>https://www.geeksforgeeks.org/how-to-change-the-id-of-element-using-javascript/
+        <br>https://api.jquery.com/append/
+        <br>https://www.w3schools.com/jquery/jquery_dom_set.asp
+        <br>https://www.youtube.com/watch?v=4q2vvZn5aoo
+        <br>https://www.reddit.com/r/javascript/comments/4b2rxn/basic_game_menu/
+        <br>https://stackoverflow.com/questions/29276145/game-menu-html-jquery
+        <br>https://developer.mozilla.org/es/docs/Web/HTML/Element/audio
+        <br>https://medium.com/@ericschwartz7/adding-audio-to-your-app-with-jquery-fa96b99dfa97
+        <br>https://forum.jquery.com/topic/detect-if-html5-audio-is-playing-using-jquery
+        <br>https://www.w3schools.com/jsref/dom_obj_audio.asp
+        <br>https://www.youtube.com/watch?v=lGJ9i6CYKyQ&t=677s
+        <br>https://es.ccm.net/contents/157-como-posicionar-elementos-en-css
+        <br>https://www.creativosonline.org/menu-html-css.html
+        <br>https://developer.mozilla.org/es/docs/Web/CSS/@keyframes
+      </p>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <section class="content">
+    <div class="apartado">
+      <h2>Contacta con nosostros</h2><br>
+      <form class="formulario" method="POST">
+        <label for=" nombre:"> Nombre </label>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for=" correo electronico:"> Correo electronico:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="Asunto">Asunto</label>
+        <input type ="text" name="asunto" id="asunto" > <br>
+        <label for="mensaje">Mensaje:</label>
+        <textarea name="mensaje" for="mensaje" placeholder="Describe brevemente en menos de 300 carácteres." maxlength="300"></textarea>
+        <input type="submit" value="ENVIAR" /><br />
+      </form>
+    </div>
+  </section>
+</main>
+<footer>
+  <h3>Proyecto Aplicaciones Multimendia. UC3M</h3>
+</footer>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/page.js"></script>
+<script type="text/javascript" src="../js/game.js"></script>
+<script type="text/javascript" src="../js/game-menu.js"></script>
+<script type="text/javascript" src="../js/levels.js"></script>
