@@ -74,7 +74,7 @@ header nav::after{
 }
 
 footer{
-  text-align: center;
+  /* text-align: center; */
   background-color: var(--c2);
   width: 100vw;
   height: 80px;
@@ -85,21 +85,20 @@ footer{
   justify-content: center;
 }
 
-footer nav a{
+footer a{
+  position: absolute;
+  right: 5vw;
+}
+
+/* footer nav a{
   text-align: right;
   padding-right: 20px;
   color:var(--c1);
-}
+} */
 
-footer nav a:hover {
+/* footer nav a:hover {
   color: var(--c3)
-}
-
-footer a{
-  float: right;
-  padding-right: 20px;
-  color: var(--c1);
-}
+} */
 
 /* Tabs ***********************************************/
 .tab{
@@ -261,7 +260,7 @@ h1 .title {
 
 /* Formulario ************************************/
   
-.formulario input[type="text"],form input[type="email"]{
+.form input[type="text"],form input[type="email"]{
   width:180px;
   border:1px solid var(--c2);
   border-radius:3px;
@@ -270,7 +269,7 @@ h1 .title {
   display:inline-block;
 }
   
-.formulario input[type="submit"]{
+.form input[type="submit"]{
   width:100%;
   padding:8px 16px;
   margin-top:32px;
@@ -281,7 +280,7 @@ h1 .title {
   background-color:var(--c2);
 }
 
-.formulario input[type="submit"]:hover{
+.form input[type="submit"]:hover{
   cursor:pointer;
   color:var(--c3);
 }

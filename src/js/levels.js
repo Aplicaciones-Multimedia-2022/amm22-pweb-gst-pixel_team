@@ -14,7 +14,7 @@ function levels(level){
         break;
     }
 }
-
+//Definición de niveles
 function tutorial(){  // Tutorial
     cleanLevel();
     i = 0;
@@ -318,6 +318,7 @@ function cleanLevel(){
     entities.splice(0, entities.length);            // Splice es una funcion predefinida que la uso para resetear el array   
 }
 
+//Funciones de nivel
 function spike(x, y, num, res){
     for(var counter = 0;counter<num;counter++){
         entities[i+=1] = new Obstacle(x+50*counter,y,50,50, res,1);

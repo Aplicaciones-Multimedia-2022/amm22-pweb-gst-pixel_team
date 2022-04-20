@@ -59,7 +59,7 @@ var skinSelector = 1;
 
 //Paths
 var skins = ["../../resources/imgs/skins/player1_block.png","../../resources/imgs/skins/player2_block.png",
-            "../../resources/imgs/skins/player3_block.png"]; // Este es el array que contiene todas las skins
+            "../../resources/imgs/skins/player3_block.png"];
 
 var backgrounds = ["../../resources/imgs/backgrounds/background3.png","../../resources/imgs/backgrounds/background1.png",
                     "../../resources/imgs/backgrounds/background1.png"];
@@ -501,7 +501,7 @@ class Spring extends Entity{
     }
 }
 
-class Text{
+class Text{ //Usado para el tutorial
     constructor(posX, posY, text){
         this.posX = posX;
         this.posY = posY;
@@ -516,7 +516,7 @@ class Text{
     }
 }
 
-class Particle{
+class Particle{ //Estela de partículas
     constructor(player){
         this.posX = player.posX;
         this.posY = player.posY + player.height - 2;    
@@ -552,6 +552,7 @@ function drawParticles(){
     }
 }
 
+//Bucle de juego
 function updateEnviroment(){
     enviroment.clear();
 
