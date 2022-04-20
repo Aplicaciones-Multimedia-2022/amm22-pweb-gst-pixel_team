@@ -6,6 +6,5 @@ $('#sumbitemail')[0].addEventListener('click',function(){
     var asunto = $('#asunto').value;
     var msg = $('#mensaje').value;
 
-    window.location.href = "mailto:100429257@alumnos.uc3m.es";
-
+    window.location.href = `mailto:test@example.com?subject=${msg}`;
 });

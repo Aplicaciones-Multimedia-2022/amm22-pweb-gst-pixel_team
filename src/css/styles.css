@@ -76,7 +76,7 @@ header nav::after{
 footer{
   text-align: center;
   background-color: var(--c2);
-  width: 100%;
+  width: 100vw;
   height: 80px;
   color: var(--c1);
   font-family: Upheaval;
