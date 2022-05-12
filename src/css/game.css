@@ -1,0 +1,127 @@
+@font-face{
+    font-family: ethnocentric;
+    src: url(../../resources/fonts/ethnocentric\ rg\ it.otf);
+}
+
+@font-face {
+    font-family: Upheaval;
+    src: url(../../resources/fonts/upheavtt.ttf);
+}
+
+:root{
+    --c1: rgb(255,255,255);
+    --c2: rgb(0, 0, 0);
+    --c3: rgb(158, 158, 158);
+    --c4: #ff31f7;
+    --c5: #ff31f7;
+    --c6: #ba37f6;
+    --c7: #9239f6;
+    --c8: #903495;
+    --c9: #6f3460;
+    --c10: #d20076;
+    --c11: #ff0076;
+    --c12: #ff6b58;
+    --c13: #ff4373;
+    --c14: #ff005a;
+}
+
+#canvas {
+    padding-left: 0;
+    padding-right: 0;  
+    display: block;
+    background: #0f939c;
+    border: #5e46e9 10px solid;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-image: url(../../resources/imgs/backgrounds/background1.png); 
+}
+
+/*css de los menus del juego*/
+#game{
+    display: flex;
+    justify-content: center;
+}
+
+.menu{
+    margin-top: 120px;
+    display: none;
+    height: 250px;
+    width: 500px;
+    position: absolute;
+    border: var(--c4) solid 10px;
+    float:left;
+    z-index: 50;
+    text-align: center;
+    background-color: #0f939c;
+    justify-content: center;
+}
+
+#menu-principal{
+    display: none;
+}
+
+#menu-level{
+    display:none;
+}
+
+#menu-skin{
+    display: none;
+}
+
+#menu-gameover{
+    display: none;
+}
+
+#pause{
+    display:none;
+    border: 0;
+    margin-top: 10px;
+    margin-left: 750px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+}
+
+.menu h1{   
+    margin-top: 25px;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: ethnocentric;
+    text-transform: lowercase;
+}
+
+.menu input {
+    background-color: var(--c11);
+    width: 480px;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: Upheaval;
+    text-transform: lowercase;
+    
+}
+
+.menu input:hover {
+    background-color: var(--c10);
+    color: var(--c1);
+}
+
+#play{
+    width: 50px;
+    margin-top: 25px;
+}
+
+#audio{
+    margin-top: 25px;
+}
+
+.menu img{
+    margin-top: 7.5px;
+    margin-left: 200px;
+    height: 35px;
+    width: 50px;
+}
+
+#menu-pause{
+    display: none;
+}
